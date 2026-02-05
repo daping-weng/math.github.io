@@ -84,10 +84,10 @@
         var draw_state = 0;
         var latex = false;
         var listener = false;
-        var horizontal_spacing = 800;
-        var vertical_spacing = 50;
         var color_list = document.getElementById("color_list").value.split(",");
         var cycle_color_list = document.getElementById("cycle_color_list").value.split(",");
+        var horizontal_spacing = 800;
+        var vertical_spacing = 50;
         var cycles_to_draw = [];
         var weave_length = 600;
         var braid_record = [];
@@ -186,6 +186,8 @@
         }
 
         function draw() {
+            color_list = document.getElementById("color_list").value.split(",");
+            cycle_color_list = document.getElementById("cycle_color_list").value.split(",");
             horizontal_spacing = 800/(braid_record[0].word.length+1);
             original_braid = braid_record[0].clone();
             var seed_data = original_braid.cycles_and_quiver(moves);
